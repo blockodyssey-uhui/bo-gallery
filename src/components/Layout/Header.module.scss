@@ -1,0 +1,45 @@
+.container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    transition: transform 0.4s;
+    transform: translateY(-100%);
+
+    &__open {
+        transform: translateY(0%);
+        z-index: 2000;
+    }
+}
+
+.search {
+    height: 57px;
+    background: white;
+}
+
+.navWrap {
+    overflow: hidden;
+}
+
+.nav {
+    padding: 0 10px;
+    color: white;
+    background: #07bb7b;
+    -ms-overflow-style: none; /* IE and Edge */
+    overflow-x: auto;
+    scrollbar-width: none; /* Firefox */
+
+    > ul {
+        display: flex;
+    }
+}
+
+.nav::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.navLink {
+    height: 54px;
+    padding: 18px 10px 0;
+    flex-shrink: 0;
+}
