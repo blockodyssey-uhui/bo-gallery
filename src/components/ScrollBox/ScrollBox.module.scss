@@ -1,0 +1,84 @@
+@mixin animate($animation, $duration, $method, $times) {
+    animation: $animation $duration $method $times;
+}
+
+@mixin keyframes($name) {
+    @keyframes #{$name} {
+        @content;
+    }
+}
+
+.container {
+    max-height: 500px;
+    padding: 0 20px;
+    background: white;
+    transition: max-height 0.3s;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px 0 rgb(0 0 0 / 6%);
+
+    &__fold {
+        max-height: 60px;
+        overflow: hidden;
+    }
+}
+
+.title {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tab {
+    display: flex;
+}
+
+.tabMenu {
+    > button {
+        padding: 0 10px;
+        font-size: 18px;
+        font-weight: bold;
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+    }
+
+    &__active {
+        background: skyblue;
+    }
+}
+
+.content {
+    padding-bottom: 20px;
+    transition: opacity 0.5s;
+    opacity: 0;
+
+    &__open {
+        opacity: 1;
+    }
+}
+
+.arrow {
+    background: transparent;
+    border: none;
+
+    &__open {
+        display: none;
+    }
+
+    @include keyframes(horizontal) {
+        0% {
+            margin-top: 0;
+        }
+
+        50% {
+            margin-top: 10px;
+        }
+
+        100% {
+            margin-top: 0;
+        }
+    }
+
+    @include animate(horizontal, 1s, ease-in-out, infinite);
+}
