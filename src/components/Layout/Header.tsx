@@ -6,6 +6,7 @@ import cn from "classnames";
 import Link from "next/link";
 
 import styles from "./Header.module.scss";
+import { BiSearch } from "react-icons/bi";
 
 const navList = [
     "책방",
@@ -55,7 +56,12 @@ const Header = () => {
 
     return (
         <header className={cn(styles.container, { [styles.container__open]: scrollState === "DOWN" })}>
-            <section className={styles.search}>검색영역</section>
+            <section className={styles.search}>
+                <input placeholder="검색어를 입력해주세요." type="text" />
+                <button>
+                    <BiSearch size={40} color="#07bb7b" />
+                </button>
+            </section>
             <div className={styles.navWrap}>
                 <nav className={styles.nav}>
                     <ul>
