@@ -1,4 +1,3 @@
-import Header from "@/components/Layout/Header";
 import ScrollBox from "@/components/ScrollBox";
 import type { Meta, StoryObj } from "@storybook/react";
 
