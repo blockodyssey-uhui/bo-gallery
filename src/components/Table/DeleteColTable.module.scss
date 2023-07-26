@@ -1,0 +1,27 @@
+.table {
+    width: 100%;
+    border: 1px solid black;
+
+    td,
+    th {
+        height: 40px;
+        border: 1px solid black;
+        text-align: center;
+        vertical-align: middle;
+        word-break: keep-all;
+    }
+
+    > thead {
+        font-weight: bold;
+        background: rgb(193 204 232);
+        th {
+            width: 150px;
+        }
+    }
+
+    @media (width <= 768px) {
+        .delete {
+            display: none;
+        }
+    }
+}

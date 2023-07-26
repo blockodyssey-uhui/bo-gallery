@@ -1,0 +1,77 @@
+.table {
+    width: 100%;
+    border: 1px solid black;
+    overflow: hidden;
+    table-layout: fixed;
+
+    td,
+    th {
+        height: 40px;
+        border: 1px solid black;
+        text-align: center;
+        vertical-align: middle;
+        word-break: keep-all;
+    }
+
+    > thead {
+        font-weight: bold;
+        background: rgb(233 177 177);
+    }
+
+    @media (width <= 768px) {
+        border: none;
+
+        thead {
+            display: none;
+        }
+
+        tr {
+            margin-bottom: 20px;
+            display: block;
+            border: 1px solid black;
+        }
+
+        td {
+            display: flex;
+            align-items: center;
+            border: none;
+            text-align: start;
+        }
+
+        td:nth-child(2n) {
+            border-bottom: 1px solid black;
+            border-top: 1px solid black;
+        }
+
+        td::before {
+            min-width: 100px;
+            height: 100%;
+            padding: 0 10px;
+            margin-right: 10px;
+            font-weight: bold;
+            background: rgb(233 177 177);
+            display: flex;
+            align-items: center;
+        }
+
+        td:nth-child(1)::before {
+            content: 'Block Height';
+        }
+
+        td:nth-child(2)::before {
+            content: 'Timestamp';
+        }
+
+        td:nth-child(3)::before {
+            content: 'Total TXs';
+        }
+
+        td:nth-child(4)::before {
+            content: 'Size';
+        }
+
+        td:nth-child(5)::before {
+            content: 'Block Hash';
+        }
+    }
+}
